@@ -31,7 +31,7 @@ namespace GuessBasketWeight
                 var playerType = 0;
                 CheckInputParameter(1, 5, ref playerType);
 
-                var player = new Player(playerName, (PlayerType)playerType, Common.GetRandomNew(Tuple.Create(1, PlayersAmount), Players.Select(p => p.OrderInRound)) );
+                var player = Player.GetNewPlayer((PlayerType)playerType, playerName, Common.GetRandomNew(Tuple.Create(1, PlayersAmount), Players.Select(p => p.OrderInRound)) );
 
                 Players.Add(player);
             }
